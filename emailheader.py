@@ -28,10 +28,17 @@ if len(sys.argv) != 2:
 
 counter = 0
 
-# open the logfile for reading.
+# open the headerfile for reading.
 
 try:
-    logFile = open(sys.argv[1], "r")
+    headerFile = open(sys.argv[1], "r")
+    # Set file position back to the start of the file.
+    #headerFile.seek(0,0)
+
+    # Print header file to terminal
+    print(headerFile.readlines())
+
+
 except (IOError, ValueError) as e:
 #    print ("Could not find file: " +sys.argv[1])
     print(e)
